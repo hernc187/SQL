@@ -1,0 +1,19 @@
+SELECT *
+FROM chinook.customers
+
+#1 Show Customers (their full names, customer ID, and country) who are not in the US.
+SELECT firstname, lastname,customerID,country
+FROM chinook.customers
+WHERE Country <> 'USA'
+ORDER BY lastname ASC;
+
+#2 Show the Employees who are Sales Support Agents.
+SELECT lastname,firstname,title
+From chinook.employees
+WHERE title='Sales Support Agent'
+ORDER BY lastname;
+
+#3 What are the total sales for 2009?
+SELECT SUM(total), InvoiceDate
+FROM chinook.invoices
+WHERE InvoiceDate like '%2009%';
