@@ -1,0 +1,29 @@
+-Reviwing the Data for the Ramen
+SELECT *
+FROM BIT_DB.ramen
+
+-What type, style and county haves a have 5 stars?
+Select Brand, 
+Style, 
+Stars, Country
+FROM BIT_DB.ramen
+WHERE Stars Like '%5.%'
+Order by Style;
+
+-what are the brands that are used in USA?
+SELECT Country, Brand
+FROM BIT_DB.ramen
+WHERE Country like '%USA%'
+ORDER BY Brand ASC;
+
+-The count of variety are used
+SELECT Count(Variety), Style, Brand, Country
+FROM BIT_DB.ramen
+GROUP BY Country
+ORDER BY Brand;
+
+-what are the Top Ten in 2016
+SELECT  Brand, Style, Country,  "Top Ten"
+FROM BIT_DB.ramen
+WHERE "Top Ten" like '%2016%'
+ORDER BY "Top Ten" desc;
