@@ -1,0 +1,31 @@
+
+SELECT*
+FROM BIT_DB.AmazonPrime
+
+- Movies that were released 2008
+
+SELECT "Movie Name", "Year of Release"
+FROM BIT_DB.AmazonPrime
+WHERE "Year of Release" like '%2008%'
+
+-Movies whose Language is Tamil
+
+SELECT "Movie Name", Language, "Year of Release", "Running Time"
+FROM BIT_DB.AmazonPrime
+WHERE Language='Tamil'
+ORDER BY "Running Time"
+Limit 10;
+
+-Movies that IMDB Rating 8 and are Maturity Rating 18+
+
+SELECT "Movie Name", "Maturity Rating", "IMDb Rating"
+FROM BIT_DB.AmazonPrime
+WHERE "IMDb Rating"='8'
+AND "Maturity Rating" like '%18+%'
+ORDER BY "Movie Name" ASC
+
+- Movies about love in the Plot
+
+SELECT "Movie Name", "Maturity Rating", Plot
+FROM BIT_DB.AmazonPrime
+WHERE Plot like '%love%'
