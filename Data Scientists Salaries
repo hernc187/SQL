@@ -1,0 +1,25 @@
+SELECT*
+FROM BIT_DB.Data_Scientists_Salaries
+
+what is the averaged salary of a Data scients?
+SELECT AVG(Salary), Title
+FROM BIT_DB.Data_Scientists_Salaries
+WHERE title='Data Scientist'
+
+What company pays more Salary in texas?
+
+SELECT salary, company_industry, location
+FROM BIT_DB.Data_Scientists_Salaries
+WHERE salary>='100,000'
+AND location like'%TX%'
+ORDER BY salary ASC
+LIMIT 11;
+
+list of diferent title that many ppl have PHD.
+
+SELECT distinct education, title
+FROM BIT_DB.Data_Scientists_Salaries
+WHERE education='PhD'
+order by title desc
+limit 15;
+
