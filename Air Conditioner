@@ -1,0 +1,21 @@
+SELECT*
+FROM BIT_DB."Air Conditioner"
+
+-What are the total of each brand of airconditioner unit?
+SELECT Brand, Type, Sum([Price ($)])
+From BIT_DB."Air Conditioner"
+GROUP BY brand
+HAVING SUM([Price ($)]);
+
+-What are the  brands that have 4 years on their unit?
+SELECT Brand, Type, [Age (years)],Location
+FROM BIT_DB."Air Conditioner"
+WHERE [Age (years)] LIKE '%4%'
+and Location Like '%USA%'
+ORDER BY Brand;
+
+- locating the Energy Efficiency Ratio more the 15.5
+SELECT Brand, [EER/SEER],  [Age (years)], [Capacity (BTUs)],[Price ($)]
+FROM BIT_DB."Air Conditioner"
+WHERE [EER/SEER]>'15.5'
+Order by [Price ($)];
